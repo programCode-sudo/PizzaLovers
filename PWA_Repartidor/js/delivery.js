@@ -70,20 +70,44 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Cambio de estado online/offline
   statusSwitch.addEventListener('change', async () => {
-      if (!isAuthenticated()) {
-          statusSwitch.checked = false;
-          alert("Debe iniciar sesión para cambiar estado.");
-          return;
-      }
-      const isOnline = statusSwitch.checked ? 1 : 0;
-      try {
-          await apiRequest(`/delivery_person/changeIsOnline/0/`, 'POST', { is_online: isOnline }, true);
-          console.log('Estado is_online actualizado:', isOnline);
-      } catch (error) {
-          console.error('Error al cambiar estado online:', error);
-          alert('Error al cambiar estado. Intenta nuevamente.');
-      }
-  });
+    if (!isAuthenticated()) {
+        statusSwitch.checked = false;
+        alert("Debe iniciar sesión para cambiar estado.");
+        return;
+    }
+
+    const isOnline = statusSwitch.checked ? 1 : 0;
+    const accessToken = localStorage.getItem('accessToken'); // Obtener el token del almacenamiento local
+
+    if (!accessToken) {
+        statusSwitch.checked = false;
+        alert("No se encontró el token de acceso. Por favor, inicie sesión de nuevo.");
+        return;
+    }
+
+    try {
+        const response = await fetch('https://web-production-3c69.up.railway.app/delivery_person/changeIsOnline/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${accessToken}`
+            },
+            body: JSON.stringify({ is_online: isOnline })
+        });
+
+        if (response.ok) {
+            console.log('Estado is_online actualizado:', isOnline);
+        } else {
+            const errorData = await response.json();
+            console.error('Error al cambiar estado online:', errorData);
+            alert('Error al cambiar estado. Intenta nuevamente.');
+        }
+    } catch (error) {
+        console.error('Error al cambiar estado online:', error);
+        alert('Error al cambiar estado. Intenta nuevamente.');
+    }
+});
+
 
   // Cargar pedidos disponibles al hacer clic
   pedidosDisponiblesBtn.addEventListener('click', async () => {
