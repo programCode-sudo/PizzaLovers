@@ -1,0 +1,107 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F3E6E6;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Contenedor que agrupa ambas elipses */
+.ellipse-container {
+  position: relative;
+  width: 220px; /* Tamaño común para el contenedor */
+  height: 170px;
+  margin-top: -5%; /* Sube el contenedor para que ambas elipses suban juntas */
+
+}
+
+/* Fondo (ellipse2) */
+.ellipse2 {
+  width: 220px; /* Más grande para simular el borde */
+  height: 170px;
+  background-color: #ffffff; /* Blanco para simular el fondo */
+  clip-path: ellipse(62% 60% at 19% 25%);
+  position: absolute;
+  top: -0.3%;
+  right: 10.8%;
+  border-radius: 10px;
+  z-index: 1; /* Envía al fondo */
+}
+
+/* Capa superior (ellipse) */
+.ellipse {
+  width: 200px;
+  height: 150px;
+  background-color: #EAB885;
+  clip-path: ellipse(67% 65% at 19% 25%);
+  position: absolute;
+  top: -0.3%;
+  left: -10.8%;
+  border-radius: 10px;
+  z-index: 2; /* Asegura que esté por encima de ellipse2 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Imagen dentro de la ellipse */
+.logo {
+  width: 80%;
+  height: auto;
+}
+
+
+
+.logo {
+  width: 50%; /* Ajusta la imagen al ancho del contenedor */
+  height: 50%; /* Mantén las proporciones de la imagen */
+  top:10px;
+  left:10px;
+  position: absolute;
+ 
+}
+
+.ancho-form{
+  width: 40%;
+  border-radius: 10px;
+  background: linear-gradient(0deg, #EAB885, #E0CEBC);
+
+}
+/* Tamaño reducido y centrado para los textboxes */
+.textbox-size {
+  max-width: 350px; /* Ancho máximo */
+  width: 100%; /* Responsivo para dispositivos más pequeños */
+  margin: auto; /* Centra el textbox horizontalmente */
+  text-align: center; /* Centra el texto dentro del textbox */
+  margin-top: 7%;
+  font-size: 14px; /* Reduce el tamaño del texto */
+}
+
+.alineacion {
+  display: flex;
+  justify-content: flex-start; /* Alinea el contenedor hacia la izquierda */
+}
+
+.alineacion img {
+  margin-left: 0; /* Asegura que la imagen siga alineada con el contenedor */
+}
+
+.btn_iniciar_sesion{
+  background: #B72A23;
+  color: white;
+  margin-top: 3%;
+}
+.btn_iniciar_sesion:hover{
+  background: #e97670;
+}
+
+.btn_registro{
+  background: #D9823F;
+  color: white;
+
+  margin-bottom: 2%;
+}
+.btn_registro:hover{
+  background: #dda479;
+}

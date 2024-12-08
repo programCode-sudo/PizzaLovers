@@ -1,0 +1,168 @@
+body {
+    background-color: #F1D7C3;
+}
+.combobox {
+    background-color: #EDB080;
+    border: none;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.table-container {
+    margin: 20px auto;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.table th {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+.table td {
+    text-align: center;
+}
+.table a {
+    text-decoration: none;
+}
+.table a.btn {
+    color: #fff;
+    background-color: #b72a23;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+.table a.btn:hover {
+    background-color: #b72a23b6;
+    color: #000;
+    text-decoration: none;
+}
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #000;
+}
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.filter-label {
+    font-weight: bold;
+    color: #000;
+}
+.btn-secondary {
+    background-color: #b72a23;
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.btn-secondary:hover {
+    background-color: #a0211db7;
+    color: #000;
+}
+
+/* Responsividad para xs (<576px) */
+/* Responsividad para xs (<576px) */
+@media (max-width: 575.98px) {
+    h1 {
+        font-size: 20px; /* Tamaño reducido del título */
+    }
+
+    .filter-container {
+        flex-direction: column; /* Coloca el filtro en una columna */
+        gap: 5px; /* Espacio más reducido */
+    }
+
+    .filter-label,
+    .combobox {
+        font-size: 14px;
+        width: 50%; /* El filtro ocupa todo el ancho */
+        text-align: center;
+    }
+
+    .table-container {
+        padding: 0 5px;
+        margin: 10px 0;
+        overflow-x: auto; /* Habilita scroll horizontal si es necesario */
+    }
+
+    .table {
+        display: table; /* Mantiene la tabla visible */
+        width: 100%; /* Asegura que ocupe el ancho del contenedor */
+        border-spacing: 0; /* Elimina espacios entre celdas */
+        font-size: 12px; /* Tamaño reducido de texto */
+    }
+
+    .table th,
+    .table td {
+        padding: 8px; /* Ajusta el espaciado interno */
+        white-space: nowrap; /* Evita el salto de línea */
+        text-align: center; /* Centra el contenido */
+    }
+
+    .table th {
+        font-size: 13px; /* Tamaño reducido del encabezado */
+        text-transform: uppercase; /* Texto en mayúsculas */
+    }
+
+    .table td {
+        font-size: 12px; /* Tamaño reducido del texto */
+    }
+
+    .table a.btn {
+        font-size: 10px; /* Botón más compacto */
+        padding: 5px 10px; /* Reduce el padding del botón */
+    }
+}
+
+
+/* Responsividad para sm (576px a 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .filter-container {
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .filter-label,
+    .combobox {
+        font-size: 16px;
+    }
+
+    .table-container {
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+
+    .table th {
+        font-size: 14px;
+    }
+
+    .table td {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .table a.btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .btn-secondary {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}

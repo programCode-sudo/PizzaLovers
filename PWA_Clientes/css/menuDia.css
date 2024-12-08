@@ -1,0 +1,928 @@
+
+body {
+    background-color: #f7e3d0;
+}
+
+
+/* Header */
+.header {
+  background-color: #E0CEBC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Logo */
+.header .logo {
+  height: 50px;
+}
+
+/* Redes sociales */
+.header .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Elementos desde Ticket hacia la derecha */
+.header > div:last-child {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Ajustes de imágenes e íconos */
+.header img {
+  height: 30px;
+  margin: 0 5px;
+}
+
+/* Botón de enlace */
+.header a.btn-link {
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+  margin: 0 10px;
+}
+
+/* Badge del carrito */
+#contador-carrito {
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  background-color: red;
+  text-align: center;
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  z-index: 10;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividad para xs (pantallas menores a 576px) */
+@media (max-width: 575.98px) {
+  .header {
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 10px;
+  }
+
+  /* Logo centrado */
+  .header .logo {
+      height: 40px;
+      margin: 0 auto 10px;
+  }
+
+  /* Redes sociales centradas en su propia fila */
+  .header .d-flex {
+      justify-content: center;
+      margin: 10px 0;
+  }
+
+  .header img {
+      height: 20px;
+      margin: 5px;
+  }
+
+  .header a.btn-link {
+      font-size: 14px;
+      margin: 5px 0;
+  }
+
+  #contador-carrito {
+      font-size: 10px;
+      width: 15px;
+      height: 15px;
+  }
+}
+
+/* Responsividad para sm (pantallas entre 576px y 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .header {
+      padding: 15px;
+  }
+
+  /* Logo más pequeño */
+  .header .logo {
+      height: 45px;
+  }
+
+  /* Redes sociales centradas horizontalmente */
+  .header .d-flex {
+      justify-content: center;
+  }
+
+  .header img {
+      height: 25px;
+  }
+
+  .header a.btn-link {
+      font-size: 15px;
+  }
+
+  #contador-carrito {
+      font-size: 11px;
+      width: 18px;
+      height: 18px;
+  }
+}
+  
+
+/*Main*/
+/* Barra Roja con Navegación */
+.main-nav {
+  background-color: rgba(224, 101, 95, 0.65);
+  padding: 10px 0;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+}
+
+/* Estilo de los enlaces */
+.main-nav a {
+  color: black;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  display: block; /* Asegura que funcionen bien en diseño vertical */
+}
+
+.main-nav a:hover {
+  background-color: rgba(183, 42, 35, 0.8);
+  color: white;
+}
+
+/* Botón del menú para xs y sm */
+.menu-toggle {
+  background-color: rgba(183, 42, 35, 0.85);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 90%; /* Botón centrado */
+  max-width: 300px;
+  margin: 0 auto;
+  display: none; /* Oculto en tamaños md y mayores */
+}
+
+/* Contenedor de enlaces oculto por defecto */
+.menu-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Ajusta los enlaces en filas si es necesario */
+  gap: 20px;
+}
+
+/* Responsive para sm (576px a 768px) */
+/* Responsive para sm (576px a 768px) */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block; /* Mostrar el botón en pantallas pequeñas */
+  }
+}
+
+/* Responsive para xs (<576px) */
+@media (max-width: 575.98px) {
+  .menu-links a {
+      font-size: 14px; /* Tamaño de texto más pequeño */
+      padding: 12px;
+  }
+}
+
+
+
+
+/* Tarjetas de Producto */
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(229, 137, 65, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    
+    margin: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+.card-title{
+    text-align: left;
+    font-size: 30px;
+    color: #B13A12;
+    font-weight: bold;
+}
+.card-price{
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+.card-description{
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+/* Alinear H2 */
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+    margin-left: auto; /* Asegura que se alinee con el contenedor */
+    margin-right: auto;
+    margin-bottom: 20px; /* Espaciado con las tarjetas */
+}
+
+/* Imagen de Producto Reducida */
+.product-image {
+    width: 95%; /* Imagen más pequeña */
+    height: 150px; /* Mantiene proporciones */
+    margin: 0 auto 10px; /* Centrar imagen dentro de la tarjeta */
+    border-radius: 8px;
+    object-fit: cover; /* Ajustar la imagen para que no se distorsione */
+}
+
+/* CONTROLES DE CANTIDAD */
+.quantity-container {
+    width: 120px;
+    height: 36px;
+    background: #F9EBDD;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin: 0 auto 20px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-line {
+    width: 2px;
+    height: 90%; /* Ahora ocupa el 80% de la altura del contenedor */
+    background: black;
+    align-self: center; /* Centra verticalmente */
+}
+
+.quantity-text {
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    width: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-number {
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* BOTÓN AGREGAR AL CARRITO */
+.add-to-cart-btn {
+    background-color: #b72a23;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #a0241f;
+    transform: translateY(-2px);
+}
+
+/* Estilo para alinear cantidad y botón */
+.card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.card-actions .quantity-container {
+    margin: 0; /* Elimina cualquier margen adicional */
+}
+
+.card-actions .add-to-cart-btn {
+    margin-left: 10px; /* Espacio entre cantidad y botón */
+}
+ /*MEDIA QUERYS TARJETAS*/
+
+/* Responsive ajustes para xs (<576px) */
+@media (max-width: 575.98px) {
+  .col-md-4 {
+      flex: 0 0 90%; /* Cada tarjeta ocupa el 90% del ancho del contenedor */
+      max-width: 90%; /* Asegura que no exceda el ancho permitido */
+      margin: 0 auto 20px; /* Centra la tarjeta y añade espacio entre ellas */
+      margin-top: 20px;
+  }
+
+  .card {
+      padding: 10px; /* Reduce aún más el padding interno */
+  }
+
+  .product-image {
+      height: 100px; /* Imágenes más compactas */
+      width: 90%;
+  }
+
+  .card-title {
+      font-size: 18px; /* Títulos más pequeños */
+  }
+
+  .card-price {
+      font-size: 14px; /* Precios más pequeños */
+  }
+
+  .card-description {
+      font-size: 12px; /* Descripción más compacta */
+  }
+
+  .quantity-container {
+      width: 80px; /* Contenedor de cantidad aún más pequeño */
+      height: 25px; /* Reduce la altura */
+  }
+
+  .add-to-cart-btn {
+      padding: 8px 12px; /* Botón más compacto */
+      font-size: 12px; /* Texto del botón más pequeño */
+  }
+}
+
+/* Responsive ajustes para sm (576px a 768px) */
+@media (min-width: 576px) and (max-width:  767.98px) {
+  .col-md-4 {
+      flex: 0 0 50%; /* Ocupa el 50% del ancho del contenedor */
+      max-width: 50%; /* Asegura que no exceda el ancho permitido */
+  }
+
+  .card {
+      padding: 15px; /* Reduce el padding interno */
+  }
+
+  .product-image {
+      height: 120px; /* Imágenes más compactas */
+  }
+
+  .card-title {
+      font-size: 20px; /* Títulos más pequeños */
+  }
+
+  .card-price {
+      font-size: 16px; /* Precios más pequeños */
+  }
+
+  .card-description {
+      font-size: 14px; /* Descripción más compacta */
+  }
+
+  .quantity-container {
+      width: 100px; /* Contenedor de cantidad más pequeño */
+      height: 30px; /* Reduce la altura */
+  }
+
+  .add-to-cart-btn {
+      padding: 10px 15px; /* Botón más compacto */
+      font-size: 14px; /* Texto del botón más pequeño */
+  }
+}
+
+/* Responsive ajustes para lg (992px a 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .col-md-4 {
+      flex: 0 0 50%; /* Cada tarjeta ocupa el 50% del ancho del contenedor */
+      max-width: 50%; /* Asegura que no exceda el ancho permitido */
+  }
+
+  .card {
+      padding: 20px; /* Mantiene el padding */
+  }
+
+  .product-image {
+      height: 150px; /* Mantiene las imágenes proporcionadas */
+  }
+
+  .card-title {
+      font-size: 24px; /* Títulos más pequeños que en xl */
+  }
+
+  .card-price {
+      font-size: 18px; /* Precios ajustados */
+  }
+
+  .card-description {
+      font-size: 14px; /* Descripción compacta */
+  }
+
+  .quantity-container {
+      width: 100px; /* Contenedor de cantidad más pequeño */
+      height: 30px; /* Altura ajustada */
+  }
+
+  .add-to-cart-btn {
+      padding: 10px 15px; /* Botón más compacto */
+      font-size: 14px; /* Texto del botón ajustado */
+  }
+}
+
+
+
+
+
+/* Footer Section */
+.footer {
+  background-color: black;
+  color: white;
+}
+
+.footer-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.footer-link {
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-app-link {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-copyright {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 50px;
+  height: auto;
+}
+
+.footer-line {
+  height: 2px;
+  background-color: white;
+  margin: 20px 0;
+}
+
+/* Responsividad para xs (pantallas menores a 576px) */
+
+@media (max-width: 575.98px) {
+  .footer .container {
+      padding: 15px;
+  }
+
+  /* Texto del call center */
+  .footer section.py-3.text-center {
+      margin-bottom: 15px;
+  }
+
+  .footer-text {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  /* Navegación apilada */
+  .footer nav .row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-title {
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+
+  .footer-link {
+      font-size: 14px;
+      margin-bottom: 5px;
+  }
+
+  /* Logotipo de la app centrado */
+  .footer-app-link {
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+  }
+
+  .footer-logo {
+      width: 40px;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+  }
+
+  /* Copyright centrado */
+  .footer-copyright {
+      font-size: 13px;
+      text-align: center;
+      margin-top: 10px;
+      padding: 10px;
+      line-height: 1.5;
+  }
+
+  /* Línea divisoria */
+  .footer-line {
+      margin: 15px 0;
+  }
+
+  /* Centrar logotipo y texto como bloque */
+  .footer .py-3.d-flex {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+
+  .footer .py-3.d-flex > div {
+      width: 100%;
+  }
+}
+
+
+
+/* Responsividad para sm (pantallas entre 576px y 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .footer .container {
+      padding: 20px;
+  }
+
+  /* Texto del call center */
+  .footer-text {
+      text-align: center;
+      font-size: 15px;
+  }
+
+  /* Navegación con columnas */
+  .footer nav .row {
+      flex-wrap: wrap;
+  }
+
+  .footer-title {
+      font-size: 15px;
+      margin-bottom: 10px;
+  }
+
+  .footer-link {
+      font-size: 14px;
+  }
+
+  /* App y copyright */
+  /* Logotipo de la app centrado */
+  .footer-app-link {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .footer-logo {
+      width: 40px;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+  }
+  .footer-app-link {
+      font-size: 15px;
+  }
+
+  .footer-logo {
+      width: 45px;
+      margin-bottom: 10px;
+  }
+
+  .footer-copyright {
+      font-size: 14px;
+      padding: 10px 0;
+  }
+}
+
+
+/* Fondo oscuro */
+.carrito-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    
+  }
+  
+  /* Carrito Modal */
+  .carrito-modal {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Inicialmente fuera de pantalla */
+    width: 450px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+  }
+  .oculto {
+    display: none;
+  }
+  
+  /* Mostrar carrito */
+  .carrito-modal.mostrar {
+    right: 0;
+  }
+  .carrito-modal.mostrar {
+    right: 0;
+  }
+/* Estilo de los elementos del carrito */
+.carrito-header {
+    background-color: #e5c6a8;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .carrito-header h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .cerrar-carrito {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #b72a23;
+    cursor: pointer;
+  }
+
+  .carrito-contenido {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #ffffff;
+  }
+  
+  
+  
+  .btn-finalizar {
+    background-color: #b72a23;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .btn-finalizar:hover {
+    background-color: #a0241f;
+  }
+  
+  /* Productos en el Carrito */
+  .carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e0cebc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .carrito-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .carrito-item div {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  .carrito-item p {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .carrito-item button {
+    background-color: transparent;
+    border: none;
+    color: #b72a23;
+    cursor: pointer;
+    font-size: 14px;
+  }
+ 
+/* Subtotal, Total y Descuentos */
+.carrito-footer {
+    background-color: #f9e3d0;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .carrito-footer p {
+    font-size: 14px; /* Reducir tamaño para ajustar líneas */
+    color: #333;
+    margin: 0;
+  }
+  
+  .carrito-footer h5 {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  
+  .carrito-footer .fw-bold {
+    font-weight: 600;
+  }
+  
+  .carrito-footer .border-bottom {
+    border-bottom: 2px solid #000000 !important;
+}
+
+.carrito-footer .border-top {
+    border-top: 2px solid #000000 !important;
+}
+  
+  .carrito-footer .text-danger {
+    color: #b72a23;
+    font-size: 14px; /* Tamaño igual a los demás */
+  }
+  
+  .carrito-footer .input-group {
+    max-width: 120px; /* Ajustar espacio */
+    font-size: 12px; /* Tamaño para que quepa bien */
+  }
+  
+  .carrito-footer select {
+    font-size: 12px;
+    padding: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn-finalizar {
+    background-color: #b72a23;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+  }
+  
+  .btn-finalizar:hover {
+    background-color: #a0241f;
+  }
+
+/* Ajustes específicos para xs (pantallas pequeñas <576px) */
+/* Ajustes para xs (<576px) */
+@media (max-width: 575.98px) {
+  .carrito-modal {
+      width: 100%; /* Ocupa el 90% del ancho de la pantalla */
+      
+      right: auto; /* Elimina desplazamiento innecesario */
+      transform: translateX(100%); /* Mantiene el modal fuera de pantalla inicialmente */
+      transition: transform 0.3s ease-in-out; /* Transición suave */
+  }
+
+  .carrito-modal.mostrar {
+      transform: translateX(0); /* Muestra el modal */
+      width: 90%;
+      right: 5%;
+  }
+
+  .carrito-header h3 {
+      font-size: 18px; /* Texto del título más pequeño */
+  }
+
+  .carrito-contenido {
+      max-height: 250px; /* Limita la altura del contenido */
+      overflow-y: auto; /* Permite scroll si el contenido excede */
+  }
+
+  .carrito-footer p,
+  .carrito-footer h5 {
+      font-size: 12px; /* Texto más pequeño */
+      margin: 5px 0; /* Reduce márgenes */
+  }
+
+  .btn-finalizar {
+      font-size: 14px; /* Texto compacto */
+      padding: 8px 12px; /* Reduce el padding del botón */
+      width: 100%; /* Botón ocupa todo el ancho */
+  }
+}
+
+
+/* Ajustes para sm (576px a 768px) */
+/* Ajustes para sm (576px a 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .carrito-modal {
+      width: 350px; /* Ancho fijo para tablets pequeñas */
+      right: 0; /* Posición visible */
+      transform: translateX(100%); /* Oculto inicialmente */
+      transition: transform 0.3s ease-in-out; /* Transición suave */
+  }
+
+  .carrito-modal.mostrar {
+      transform: translateX(0); /* Aparece en pantalla */
+  }
+
+  .carrito-header h3 {
+      font-size: 20px; /* Tamaño del título moderado */
+      padding: 10px; /* Espaciado interno */
+  }
+
+  .carrito-contenido {
+      max-height: 300px; /* Limita la altura del contenido */
+      overflow-y: auto; /* Habilita scroll interno si necesario */
+      padding: 10px; /* Espaciado interno */
+  }
+
+  .carrito-footer p,
+  .carrito-footer h5 {
+      font-size: 14px; /* Texto más grande que en xs */
+      margin: 8px 0; /* Márgenes consistentes */
+  }
+
+  .btn-finalizar {
+      font-size: 16px; /* Texto ligeramente más grande */
+      padding: 12px 15px; /* Botón más espacioso */
+      width: 100%; /* Botón ocupa todo el ancho */
+      margin-top: 10px; /* Espaciado superior */
+  }
+
+  .carrito-footer .input-group {
+      max-width: 100px; /* Ajusta el tamaño del input */
+      font-size: 12px; /* Tamaño del texto del input */
+  }
+
+  .carrito-footer select {
+      font-size: 12px; /* Ajusta el tamaño del texto del select */
+      padding: 5px; /* Espaciado interno del select */
+  }
+
+  .carrito-footer .border-bottom {
+      border-bottom: 1px solid #000; /* Grosor del borde inferior */
+  }
+
+  .carrito-footer .border-top {
+      border-top: 1px solid #000; /* Grosor del borde superior */
+  }
+}

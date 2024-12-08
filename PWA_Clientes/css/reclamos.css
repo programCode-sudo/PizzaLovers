@@ -1,0 +1,146 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(234, 184, 133, 0.5); /* Fondo #EAB885 con opacidad al 50% */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Diseño por defecto (≥1200px) */
+.ancho-form {
+  width: 40%; /* Por defecto, 40% del ancho */
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 2rem;
+}
+
+.textbox-size {
+  max-width: 100%;
+  font-size: 14px;
+  padding: 0.5rem;
+}
+
+.form-label {
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.btn_iniciar_sesion {
+  background: #b72a23;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 0.75rem;
+}
+
+.btn_iniciar_sesion:hover {
+  background: #e97670;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.close-button:hover {
+  color: #B72A23;
+  cursor: pointer;
+}
+
+/* Responsividad para xs (<576px) */
+@media (max-width: 575.98px) {
+  .ancho-form {
+      width: 90%; /* Ocupa casi todo el ancho */
+      padding: 1rem; /* Reduce padding interno */
+  }
+
+  .form-label {
+      font-size: 12px; /* Texto más pequeño */
+  }
+
+  .textbox-size {
+      font-size: 12px;
+      padding: 0.4rem; /* Ajusta padding interno */
+  }
+
+  .btn_iniciar_sesion {
+      font-size: 13px;
+      padding: 0.6rem;
+  }
+
+  .close-button {
+      font-size: 1.2rem;
+  }
+
+  main {
+      padding: 10px 0; /* Centrado vertical */
+  }
+}
+
+/* Responsividad para sm (576px a 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .ancho-form {
+      width: 60%; /* Más ancho */
+      padding: 1.5rem; /* Ajusta el padding */
+  }
+
+  .form-label {
+      font-size: 14px;
+  }
+
+  .textbox-size {
+      font-size: 13px;
+      padding: 0.4rem;
+  }
+
+  .btn_iniciar_sesion {
+      font-size: 14px;
+      padding: 0.6rem;
+  }
+
+  .close-button {
+      font-size: 1.3rem;
+  }
+
+  main {
+      padding: 20px 0; /* Centrado vertical */
+  }
+}
+
+/* Responsividad para lg (768px a 1200px) */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .ancho-form {
+      width: 50%; /* Ajusta ancho para pantallas intermedias */
+      padding: 2rem; /* Mantiene padding estándar */
+  }
+
+  .form-label {
+      font-size: 14px;
+  }
+
+  .textbox-size {
+      font-size: 14px;
+      padding: 0.5rem; /* Mantiene el tamaño estándar */
+  }
+
+  .btn_iniciar_sesion {
+      font-size: 15px;
+      padding: 0.7rem;
+  }
+
+  .close-button {
+      font-size: 1.4rem;
+  }
+
+  main {
+      padding: 40px 0; /* Centrado vertical */
+  }
+}

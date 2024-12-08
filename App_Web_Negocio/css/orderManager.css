@@ -1,0 +1,274 @@
+body {
+  background-color: #FDEDD5;
+  font-family: Arial, sans-serif;
+}
+.container {
+  margin-top: 30px;
+}
+
+
+/* Botón de "Asignar Pedido" alineado */
+header .btn-estilo {
+margin: 0;
+margin-right: 20px; /* Ajuste del espacio entre el botón y el borde derecho */
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+}
+/* Notificación roja sobre el botón */
+.notification-dot {
+position: absolute;
+top: -5px;
+right: -10px;
+width: 15px;
+height: 15px;
+background-color: red;
+border-radius: 50%;
+border: 2px solid #fff; /* Borde blanco para mayor visibilidad */
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+content: "";
+}
+
+/*LOGO
+/* Contenedor que agrupa ambas elipses */
+.ellipse-container {
+  position: relative;
+  width: 223px; /* Tamaño común para el contenedor */
+  height: 200px;
+
+}
+
+/* Fondo (ellipse2) */
+.ellipse2 {
+  width: 224px; /* Más grande para simular el borde */
+  height: 170px;
+  background-color: #ffffff; /* Blanco para simular el fondo */
+  clip-path: ellipse(62% 60% at 19% 25%);
+  position: absolute;
+  top: -0.3%;
+  right: 10.8%;
+  border-radius: 10px;
+  z-index: 1; /* Envía al fondo */
+}
+
+/* Capa superior (ellipse) */
+.ellipse {
+  width: 200px;
+  height: 150px;
+  background-color: #EAB885;
+  clip-path: ellipse(67% 65% at 19% 25%);
+  position: absolute;
+  top: 0;
+  left: -10.8%;
+  border-radius: 10px;
+  z-index: 2; /* Asegura que esté por encima de ellipse2 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+ 
+
+.logo {
+  width: 50%; /* Ajusta la imagen al ancho del contenedor */
+  height: 50%; /* Mantén las proporciones de la imagen */
+  top:20px;
+  left:35px;
+  position: absolute;
+}
+
+
+/*Botones principales*/
+.btn-estilo {
+  background-color: #D67D2E;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 20px ; /* Espaciado entre botones */
+}
+
+.btn-estilo:hover {
+  background-color: #C26A20;
+  transform: scale(1.05);
+}
+
+.button-container {
+  position: absolute;
+  top: 80px; /* Ajusta para superponer los botones */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Asegura que los botones estén sobre el logo */
+}
+
+
+.form-container {
+  background-color: #FDEDD5;
+  padding: 20px;
+  border-radius: 10px;
+}
+.form-label {
+  font-weight: bold;
+}
+
+/*TABLA */
+
+.img-thumbnail{
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.table-container {
+  padding: 30px;
+}
+.table th {
+  background-color: #fdbd77;
+  color: #000;
+}
+
+/* CONTROLES DE CANTIDAD TABLA*/
+.quantity-container {
+  width: 120px;
+  height: 30px;
+  background: #eaddf9;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin: 0 auto 20px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-line {
+  width: 2px;
+  height: 90%; /* Ahora ocupa el 80% de la altura del contenedor */
+  background: black;
+  align-self: center; /* Centra verticalmente */
+}
+
+.quantity-text {
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  width: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-number-table {
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*BOTON AÑADIR*/
+.btn-red {
+  background-color: #B72A23;
+  color: white;
+}
+.btn-red:hover {
+  background-color: #b02a37;
+  color: white;
+}
+/*PEDIDO*/
+
+/* Contenedor Interno */
+.inner-container {
+  max-width: 100%; /* Máximo ancho */
+  margin: auto;
+  background-color: #D9D9D9;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Estilo de las tarjetas */
+.card-producto {
+  background-color: #F9EBDD;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+}
+
+/* Imagen del producto */
+.img-producto {
+  width: 80px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Ajustes de campos */
+input[type="text"], select {
+  margin-left: 10px;
+}
+
+/* Radio Buttons */
+.form-check {
+  margin-right: 15px;
+}
+
+/* Colores */
+.text-danger {
+  color: #FF0000;
+}
+
+.text-primary {
+  color: #D67D2E;
+}
+
+/* Botones */
+
+
+
+.btn-danger {
+  background-color: #B72A23;
+  border-radius: 20px;
+}
+
+.btn-danger:hover {
+  color: #000000;
+  background-color: #9d1c1aa8;
+}
+
+.btn-secondary {
+  background-color: #9D1D1A;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(229, 140, 140);
+  color: #000000;
+ 
+}
+.combobox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.categoria-seleccionada label {
+  margin-right: 10px;
+}

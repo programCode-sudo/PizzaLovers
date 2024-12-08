@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f4e1d2, #d9b89e);
+  min-height: 100vh;
+}
+
+
+/* Encabezado */
+h2 {
+  padding: 50px;
+  font-weight: bold;
+  color: #000000;
+}
+  
+  .card {
+    border-color: #e1c699;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+.bg-light-tab{
+    background-color: #EAB885
+}
+
+/* Fondo del programa de lealtad */
+.bg-light {
+  background-color: #E0CEBC !important; /* Cambiar a un tono beige claro */
+  border: 1px solid #d7bdbd; /* Borde sutil */
+  padding: 20px;
+}
+
+h5 {
+  font-weight: bold;
+  color: #000000; /* Cambiar color del texto del título */
+}
+
+
+/* Botón cerrar */
+.btn-danger {
+  background-color: #B72A23; 
+  
+}
+.btn-warning{
+    background-color: #c28f69;
+    color: white;
+    border-color: #c28f69;
+}
+
+.btn-warning:hover {
+    background-color: #c98f51; /* Nuevo color al pasar el cursor */
+    border-color: #c28f69; /* Nuevo borde */
+    color: #ffffff; /* Texto permanece blanco */
+}
+
+
+/* Etiquetas */
+.form-check-label {
+    font-weight: 500;
+    color: #000000;
+}
+
+
+/*MODALES*/
+
+.body-modal {
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-modal {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Encabezado de la tarjeta */
+.bg-primary-tab {
+  background-color: #D9823F;
+}
+
+/* Botones personalizados */
+.btn-warning {
+  background-color: #D9823F;
+  border-color: #D9823F;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #be7e4c;
+  border-color: #be7e4c;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #cd6155;
+  border-color: #a93226;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b03a2e;
+  border-color: #922b21;
+}
+
+.btn-Nuevo {
+  background-color: #B13A12;
+  color: white;
+}
+.btn-Nuevo:hover {
+  background-color: #d36626;
+  color: white;
+}
+
+.stylo-btn {
+  background-color: #dc3545 !important; /* Fondo rojo como btn-danger */
+  border-color: #dc3545 !important;    /* Borde rojo como btn-danger */
+  color: #fff !important;             /* Texto blanco */
+}
+
+.stylo-btn:hover {
+  background-color: #c82333 !important; /* Fondo más oscuro al pasar el mouse */
+  border-color: #bd2130 !important;    /* Borde más oscuro al pasar el mouse */
+}
+
+.stylo-btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5) !important; /* Sombra en focus */
+  outline: none; /* Sin borde de focus */
+}
+
+.stylo-btn:active {
+  background-color: #bd2130 !important; /* Fondo más oscuro al hacer clic */
+  border-color: #b21f2d !important;    /* Borde más oscuro al hacer clic */
+  box-shadow: none !important;         /* Sin sombra */
+}
+
+
+.table-container {
+  padding: 30px;
+}
+.table th {
+  background-color: #fdbd77;
+  color: #000;
+}
+.btn-Nuevo {
+  background-color: #B13A12;
+  color: white;
+}
+.btn-Nuevo:hover {
+  background-color: #d36626;
+  color: white;
+}
+
+/*Resposividad*/
+/* Extra Small (teléfonos pequeños, <576px) */
+@media (max-width: 575.98px) {
+  .table td .btn {
+    font-size: 0.7rem; /* Reduce el tamaño de fuente */
+    padding: 0.3rem 0.5rem; /* Reduce el padding */
+    margin: 0.2rem 0; /* Espaciado entre botones */
+    width: 100%; /* Los botones ocupan todo el ancho */
+  }
+}
+
+/* Small (teléfonos medianos, ≥576px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .table td .btn {
+    font-size: 0.8rem; /* Tamaño de fuente ligeramente mayor */
+    padding: 0.4rem 0.6rem; /* Ajuste del padding */
+    margin: 0.2rem 0.1rem; /* Espaciado ligero entre botones */
+    width: 100%; /* Ocupan todo el ancho */
+  }
+}
+
+/* Medium (tablets, ≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .table td .btn {
+    font-size: 0.9rem; /* Tamaño de fuente más grande */
+    padding: 0.5rem 0.8rem; /* Espaciado mayor */
+    margin: 0.2rem 0.1rem; /* Espaciado entre botones */
+    width: auto; /* Los botones vuelven a tamaño automático */
+  }
+}
+

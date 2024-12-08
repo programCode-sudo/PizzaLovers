@@ -1,0 +1,517 @@
+/* General Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E0CEBC; /* Fondo beige */
+    color: #000;
+}
+
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que los elementos estén alineados hacia arriba */
+  align-items: center;
+  padding-top: 0px; /* Espaciado superior del contenedor */
+  margin-top: 0;
+}
+
+.hero img {
+  width: 20%; /* Tamaño del logo */
+  margin-bottom: 20px; /* Espaciado entre el logo y los botones */
+  margin-top: 0;
+}
+
+.hero .buttons {
+  display: flex;
+  flex-direction: column; /* Coloca los botones en una columna */
+  gap: 15px; /* Espaciado entre botones */
+  width: 100%; /* Asegura que los botones ocupen un ancho proporcional */
+  max-width: 400px; /* Ancho máximo de los botones */
+  padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+}
+
+.hero .btn {
+  background: #C47A5F; /* Color del botón */
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 15px; /* Tamaño del botón */
+  border-radius: 25px; /* Botones redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  transition: all 0.2s ease; /* Transición suave */
+}
+
+.hero .btn:hover {
+  background-color: #b26951; /* Color más oscuro al pasar el mouse */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+
+/* Botones */
+.buttons .btn {
+    background-color: #C47A5F; 
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    transition: all 0.2s ease; /* Transición suave */
+    min-width: 325px; /* Asegura el mismo ancho mínimo */
+    padding: 80px 10; /* Altura consistente */
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.buttons .btn:hover {
+    background-color: #b26951; /* Color más oscuro al pasar el mouse */
+    color: white;
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.buttons .btn:active {
+    transform: translateY(0); /* Volver a la posición original */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra reducida al hacer clic */
+}
+
+
+
+/* Header */
+.header {
+    background-color: #E0CEBC;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Alinear logo correctamente */
+.header .logo {
+    height: 50px;
+    margin: 0;
+}
+
+/* Ajustar las imágenes de las redes sociales */
+.header .d-flex img {
+    height: 30px;
+    margin: 0 5px; /* Espaciado uniforme a los lados */
+}
+
+/* Reducir espacio entre el logo y las redes sociales */
+.header .d-flex {
+    margin-right: 0; /* Eliminar margen derecho si existe */
+}
+
+.buttons .btn {
+    background: rgba(217, 130, 63, 0.78);
+    border: none;
+    font-size: 1.5rem;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer Section */
+.footer {
+    background-color: black;
+    color: white;
+}
+
+.footer-title {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center; /* Para centrar el texto del call center */
+}
+
+.footer-link {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-app-link {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: white;
+}
+
+.footer-logo {
+    width: 50px;
+    height: auto; /* Mantén proporción */
+}
+
+/* Línea blanca en el footer */
+.footer-line {
+    height: 2px; /* Grosor de la línea */
+    background-color: white; /* Fondo blanco puro */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/*MODAL INICIAR SESION*/
+.modal-body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-modal {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.ellipse-container {
+    position: relative;
+    width: 220px; /* Tamaño común para el contenedor */
+    height: 170px;
+    margin-top: -5%; /* Sube el contenedor para que ambas elipses suban juntas */
+  }
+  
+  /* Fondo (ellipse2) */
+  .ellipse2 {
+    width: 220px; /* Más grande para simular el borde */
+    height: 170px;
+    background-color: #ffffff; /* Blanco para simular el fondo */
+    clip-path: ellipse(62% 60% at 19% 25%);
+    position: absolute;
+    top: -0.3%;
+    right: 10.8%;
+    border-radius: 10px;
+    z-index: 1; /* Envía al fondo */
+  }
+  
+  /* Capa superior (ellipse) */
+  .ellipse {
+    width: 200px;
+    height: 150px;
+    background-color: #EAB885;
+    clip-path: ellipse(67% 65% at 19% 25%);
+    position: absolute;
+    top: 0;
+    left: -10.8%;
+    border-radius: 10px;
+    z-index: 2; /* Asegura que esté por encima de ellipse2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Imagen dentro de la ellipse */
+  .log {
+    width: 80%;
+    height: auto;
+  }
+  
+  
+  .log {
+    width: 50%; /* Ajusta la imagen al ancho del contenedor */
+    height: 50%; /* Mantén las proporciones de la imagen */
+    top:20px;
+    left:20px;
+    position: absolute;
+  }
+  
+  .ancho-form{
+    width: 100%;
+    border-radius: 10px;
+    background: linear-gradient(0deg, #EAB885, #E0CEBC);  
+  }
+  
+  .alineacion {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenedor hacia la izquierda */
+  }
+  
+  .alineacion img {
+    margin-left: 0; /* Asegura que la imagen siga alineada con el contenedor */
+  }
+  
+  .btn_iniciar_sesion{
+    background: #B72A23;
+    color: white;
+  }
+  
+  .btn_iniciar_sesion:hover{
+    background: #e97670;
+  }
+  
+  /* Añadir espacio debajo del botón */
+  form button {
+    margin-bottom: 40px; /* Ajusta este valor para más o menos espacio */
+  }
+  
+  /* Ajustar el ancho de los campos de texto */
+  form .form-control {
+    width: 75%; /* Cambia este valor para ajustar el tamaño */
+    margin: 0 auto; /* Centra los campos dentro del formulario */
+    height: 40px; /* Ajusta según el diseño deseado */
+  }
+
+  /*Responsividad*/
+
+ 
+
+/* Extra Small (teléfonos pequeños, <576px) */
+@media (max-width: 575.98px) {
+  .header {
+    flex-direction: row; /* Mantener en una sola línea */
+  }
+
+  .header .logo {
+    max-width: 125px; /* Reducir tamaño del logo */
+    height: auto; /* Mantiene proporción */
+  }
+
+  .header img {
+    width: 50%; /* Reducir tamaño de íconos */
+    margin: 0 0.3rem; /* Espaciado más compacto */
+  }
+
+  .hero img {
+    max-width: 150px; /* Reducir tamaño de la imagen Hero */
+  }
+
+  .hero .buttons {
+    flex-direction: column; /* Apilar botones verticalmente */
+    gap: 1rem; /* Espaciado más compacto entre botones */
+  }
+
+  .hero .btn {
+    font-size: 0.8rem; /* Reducir texto en botones */
+    padding: 1rem 1rem; /* Padding más compacto */
+    width: 100%; /* Botones ocupan todo el ancho */
+  }
+}
+
+/* Small (teléfonos medianos, ≥576px y <768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Header */
+  .header {
+    display: flex;
+    flex-direction: row; /* Mantén el diseño horizontal */
+    justify-content: space-between; /* Espaciado entre logo e íconos */
+    align-items: center; /* Centra verticalmente */
+    padding: 1rem; /* Espaciado interno */
+  }
+
+  .header .logo {
+    max-width: 120px; /* Ajustar tamaño del logo */
+    height: auto; /* Mantener proporción */
+    object-fit: contain; /* Evitar distorsión */
+  }
+
+  .header img {
+    width: 28px; /* Ajustar tamaño de los íconos */
+    margin: 0 0.4rem; /* Espaciado compacto */
+  }
+
+  /* Hero Section */
+  .hero img {
+    max-width: 200px; /* Ajustar tamaño de la imagen Hero */
+    margin: 0 auto; /* Centrar imagen */
+  }
+
+  .hero .buttons {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los botones se ajusten */
+    justify-content: center; /* Centrar botones */
+    gap: 0.75rem; /* Espaciado moderado entre botones */
+  }
+
+  .hero .btn {
+    font-size: 0.9rem; /* Tamaño de texto ajustado */
+    padding: 0.6rem 1.2rem; /* Padding moderado */
+    width: auto; /* Tamaño automático */
+  }
+}
+
+
+/* Medium (tablets, ≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .header .logo {
+    max-width: 150px; /* Tamaño más grande del logo */
+  }
+
+  .header img {
+    width: 32px; /* Iconos más grandes */
+  }
+
+  .hero img {
+    max-width: 250px; /* Imagen Hero más prominente */
+  }
+
+  .hero .buttons {
+    flex-direction: row; /* Botones en una fila */
+    gap: 1rem; /* Espaciado más amplio */
+    justify-content: center; /* Centrar botones */
+  }
+
+  .hero .btn {
+    font-size: 1rem; /* Tamaño estándar */
+    padding: 0.7rem 1.5rem; /* Padding estándar */
+  }
+}
+/* Footer Section */
+
+/* Responsividad para xs (pantallas menores a 576px) */
+
+@media (max-width: 575.98px) {
+  .footer .container {
+      padding: 15px;
+  }
+
+  /* Texto del call center */
+  .footer section.py-3.text-center {
+      margin-bottom: 15px;
+  }
+
+  .footer-text {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  /* Navegación apilada */
+  .footer nav .row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-title {
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+
+  .footer-link {
+      font-size: 14px;
+      margin-bottom: 5px;
+  }
+
+  /* Logotipo de la app centrado */
+  .footer-app-link {
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+  }
+
+  .footer-logo {
+      width: 40px;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+  }
+
+  /* Copyright centrado */
+  .footer-copyright {
+      font-size: 13px;
+      text-align: center;
+      margin-top: 10px;
+      padding: 10px;
+      line-height: 1.5;
+  }
+
+  /* Línea divisoria */
+  .footer-line {
+      margin: 15px 0;
+  }
+
+  /* Centrar logotipo y texto como bloque */
+  .footer .py-3.d-flex {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+
+  .footer .py-3.d-flex > div {
+      width: 100%;
+  }
+}
+
+
+
+/* Responsividad para sm (pantallas entre 576px y 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .footer .container {
+      padding: 20px;
+  }
+
+  /* Texto del call center */
+  .footer-text {
+      text-align: center;
+      font-size: 15px;
+  }
+
+  /* Navegación con columnas */
+  .footer nav .row {
+      flex-wrap: wrap;
+  }
+
+  .footer-title {
+      font-size: 15px;
+      margin-bottom: 10px;
+  }
+
+  .footer-link {
+      font-size: 14px;
+  }
+
+  /* App y copyright */
+  /* Logotipo de la app centrado */
+  .footer-app-link {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .footer-logo {
+      width: 40px;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+  }
+  .footer-app-link {
+      font-size: 15px;
+  }
+
+  .footer-logo {
+      width: 45px;
+      margin-bottom: 10px;
+  }
+
+  .footer-copyright {
+      font-size: 14px;
+      padding: 10px 0;
+  }
+}

@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f4e1d2, #d9b89e);
+    min-height: 100vh;
+    box-sizing: border-box;
+    
+}
+
+html, body {
+    height: 100%;
+    overflow-x: auto; /* Evita scroll horizontal innecesario */
+  }
+
+
+/* Encabezado */
+h2 {
+    font-weight: bold;
+    color: #000000;
+}
+
+/*LOGO
+ /* Contenedor que agrupa ambas elipses */
+  .ellipse-container {
+    position: relative;
+    width: 223px; /* Tamaño común para el contenedor */
+    height: 200px;
+  
+  }
+  
+  /* Fondo (ellipse2) */
+  .ellipse2 {
+    width: 224px; /* Más grande para simular el borde */
+    height: 170px;
+    background-color: #ffffff; /* Blanco para simular el fondo */
+    clip-path: ellipse(62% 60% at 19% 25%);
+    position: absolute;
+    top: -0.3%;
+    right: 10.8%;
+    border-radius: 10px;
+    z-index: 1; /* Envía al fondo */
+  }
+  
+  /* Capa superior (ellipse) */
+  .ellipse {
+    width: 200px;
+    height: 150px;
+    background-color: #EAB885;
+    clip-path: ellipse(67% 65% at 19% 25%);
+    position: absolute;
+    top: 0;
+    left: -10.8%;
+    border-radius: 10px;
+    z-index: 2; /* Asegura que esté por encima de ellipse2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+   
+  
+.logo {
+    width: 50%; /* Ajusta la imagen al ancho del contenedor */
+    height: 50%; /* Mantén las proporciones de la imagen */
+    top:20px;
+    left:35px;
+    position: absolute;
+  }
+  
+
+.header img {
+    width: 50px;
+    margin-right: 10px;
+}
+.table-container {
+    padding: 30px;
+}
+.table th {
+    background-color: #fdbd77;
+    color: #000;
+}
+.btn-Nuevo {
+    background-color: #B13A12;
+    color: white;
+}
+.btn-Nuevo:hover {
+    background-color: #d36626;
+    color: white;
+}
+.btn-red {
+    background-color: #B72A23;
+    color: white;
+}
+.btn-red:hover {
+    background-color: #b02a37;
+    color: white;
+}
+.btn-view {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-view:hover {
+    background-color: #5a6268;
+}
+
+
+/*MODALES*/
+
+.body-modal {
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-modal {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Encabezado de la tarjeta */
+.bg-primary-tab {
+    background-color: #D9823F;
+}
+
+/* Botones personalizados */
+.btn-warning {
+    background-color: #D9823F;
+    border-color: #D9823F;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #be7e4c;
+    border-color: #be7e4c;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #cd6155;
+    border-color: #a93226;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #b03a2e;
+    border-color: #922b21;
+}
+
+.stylo-btn {
+    background-color: #dc3545 !important; /* Fondo rojo como btn-danger */
+    border-color: #dc3545 !important;    /* Borde rojo como btn-danger */
+    color: #fff !important;             /* Texto blanco */
+  }
+  
+  .stylo-btn:hover {
+    background-color: #c82333 !important; /* Fondo más oscuro al pasar el mouse */
+    border-color: #bd2130 !important;    /* Borde más oscuro al pasar el mouse */
+  }
+  
+  .stylo-btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5) !important; /* Sombra en focus */
+    outline: none; /* Sin borde de focus */
+  }
+  
+  .stylo-btn:active {
+    background-color: #bd2130 !important; /* Fondo más oscuro al hacer clic */
+    border-color: #b21f2d !important;    /* Borde más oscuro al hacer clic */
+    box-shadow: none !important;         /* Sin sombra */
+  }
+  
+
+  /*Responsividad*/
+/* Extra Small (teléfonos pequeños, <576px) */
+@media (max-width: 575.98px) {
+    .table td .btn {
+      font-size: 0.7rem; /* Reduce el tamaño de fuente */
+      padding: 0.3rem 0.5rem; /* Reduce el padding */
+      margin: 0.2rem 0; /* Espaciado entre botones */
+      width: 100%; /* Los botones ocupan todo el ancho */
+      display: inline-block; /* Botones alineados horizontalmente */
+    }
+  }
+  
+  /* Small (teléfonos medianos, ≥576px) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .table td .btn {
+      font-size: 0.8rem; /* Tamaño de fuente ligeramente mayor */
+      padding: 0.4rem 0.6rem; /* Ajuste del padding */
+      margin: 0.2rem 0.1rem; /* Espaciado ligero entre botones */
+      width: 100%; /* Ocupan todo el ancho */
+      display: inline-block; /* Botones alineados horizontalmente */
+    }
+  }
+  
+  /* Medium (tablets, ≥768px) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .table td .btn {
+      font-size: 0.9rem; /* Tamaño de fuente más grande */
+      padding: 0.5rem 0.8rem; /* Espaciado mayor */
+      margin: 0.2rem 0.1rem; /* Espaciado entre botones */
+      width: auto; /* Los botones vuelven a tamaño automático */
+      display: inline-block; /* Botones alineados horizontalmente */
+    }
+  }
+  
+  

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME REPARTIDOR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header class="header d-flex justify-content-between align-items-center p-3">
+        <!-- Logo e información del usuario -->
+        <div class="d-flex align-items-center">
+            <img src="./images/User.png" alt="User Icon" class="icon-user me-3">
+            <div class="user-info">
+                <img src="./images/v71_74.png" alt="Logo" class="logo mb-1">
+            </div>
+        </div>
+    
+        <!-- Elementos de la derecha -->
+        <div class="d-flex align-items-center">
+            <!-- Switch de estado -->
+            <div class="form-check form-switch me-4 position-relative">
+                <input class="form-check-input custom-switch" type="checkbox" role="switch" id="statusSwitch" >
+                <span class="tooltip-text">Activarse</span>
+            </div>
+            
+            <!-- Ícono de notificación -->
+            <div class="position-relative notification-icon me-5" id="notificationIcon" style="display:none;">
+                <img src="./images/notificacion.svg" alt="Notification Icon" class="icon-notification">
+                <span class="badge bg-danger rounded-circle position-absolute top-0 start-100 translate-middle" id="notificationCount">0</span>
+                <span class="tooltip-text">Pedido Asignado</span>
+            </div>
+            
+            <!-- Botones de Iniciar/Cerrar Sesión -->
+            <button id="loginBtn" class="btn btn-link text-dark mx-3" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">Iniciar Sesión</button>
+            <button id="logoutBtn" class="btn btn-link text-dark mx-3" style="display:none;">Cerrar Sesión</button>
+        </div>
+    </header>
+    
+    <main class="container my-5">
+        <div class="d-flex justify-content-between mb-4">
+            <button id="pedidosDisponiblesBtn" class="btn btn-custom px-4 py-2">Pedidos Disponibles</button>
+            <button id="pedidoAsignadoBtn" class="btn btn-custom px-4 py-2" data-bs-toggle="modal" data-bs-target="#pedidoAsignadoModal">Pedido Asignado</button>
+        </div>
+
+        <table class="table text-center">
+            <thead class="table-header">
+                <tr>
+                    <th>ID_ORDEN</th>
+                    <th>Nombre Cliente</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody class="table-body" id="ordersTableBody">
+                <!-- Se llenará dinámicamente -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-black text-white">
+        <div class="container">
+            <!-- Call Center Text -->
+            <section class="py-3 text-center">
+                <p class="mb-0">
+                    Si deseas ordenar a través de nuestro call center llama al:
+                    <strong>(503) 7201 3639</strong>
+                </p>
+            </section>
+
+            <!-- Footer Links -->
+            <nav class="py-4">
+                <div class="row text-center text-md-start">
+                    <!-- Acerca de -->
+                    <section class="col-md-4">
+                        <h5 class="footer-title">ACERCA DE</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="footer-link">Oportunidades laborales</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Servicio al cliente -->
+                    <section class="col-md-4">
+                        <h5 class="footer-title">Servicio al cliente</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="./Reclamos.html" class="footer-link">Servicio al cliente</a></li>
+                            <li><a href="#" class="footer-link">Preguntas frecuentes</a></li>
+                            <li><a href="#" class="footer-link">Habla con nosotros</a></li>
+                            <li><a href="#" class="footer-link">Nuestras tiendas</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Políticas -->
+                    <section class="col-md-4">
+                        <h5 class="footer-title">Políticas</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="footer-link">Términos de uso</a></li>
+                            <li><a href="#" class="footer-link">Políticas de privacidad</a></li>
+                            <li><a href="#" class="footer-link">TT&C</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </nav>
+
+            <!-- Divider -->
+            <hr class="footer-line" />
+
+            <!-- App -->
+            <section class="py-3 d-flex flex-wrap align-items-center">
+                <!-- Logo Section -->
+                <div class="col-md-2 text-center mb-2 mb-md-0">
+                    <p class="footer-app-link mb-2">Descarga nuestra app</p>
+                    <a href="#">
+                        <img src="./images/Google play.png" alt="Google Play" class="footer-logo img-fluid"/>
+                    </a>
+                </div>
+                <div class="col-md-10 text-center">
+                    <p class="mb-0">
+                        © Pizza Lovers, LLC. Todos los derechos reservados.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </footer>
+
+    <!-- Modal Pedido Asignado -->
+    <div class="modal fade" id="pedidoAsignadoModal" tabindex="-1" aria-labelledby="pedidoAsignadoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pedidoAsignadoLabel">Nueva Entrega</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Estos campos se llenarán dinámicamente al seleccionar un pedido -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="idOrden" class="form-label">ID_Orden</label>
+                            <input type="text" class="form-control w-75" id="modalIdOrden" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombreCliente" class="form-label">Nombre Cliente</label>
+                            <input type="text" class="form-control" id="modalNombreCliente" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="modalDireccion" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="numeroCelular" class="form-label">Número de Celular</label>
+                            <input type="text" class="form-control" id="modalNumeroCelular" readonly>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-confirm" id="confirmarEntregaBtn">Confirmar Entrega</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Iniciar Sesión -->
+    <div class="modal fade" id="modalIniciarSesion" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+              <main class="container-fluid d-flex justify-content-center align-items-center">
+                  <section class="card p-4 shadow ancho-form position-relative w-100">
+                    <header class="text-center">
+                      <h2 class="fw-bold text-center">Iniciar Sesión</h2>
+                    </header>
+                    
+                    <form id="iniciarSesionForm" class="text-center mt-4">
+                      <div class="mb-4">
+                        <input type="text" class="form-control" id="loginUsername" placeholder="Nombre de Usuario" required>
+                      </div>
+                      <div class="mb-4">
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary w-50">Iniciar Sesión</button>
+                    </form>
+                  </section>
+                </main>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts Comunes -->
+    <script src="../Common/js/api.js"></script>
+    <script src="../Common/js/auth.js"></script>
+    <script src="../Common/js/utils.js"></script>
+    <!-- Script Específico -->
+    <script src="./js/delivery.js"></script>
+
+</body>
+</html>

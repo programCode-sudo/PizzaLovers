@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Manager</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/menuManager.css">
+</head>
+<body>
+     <!-- Header con Logo y Botón de Cierre de Sesión -->
+     <header class="header d-flex align-items-center justify-content-between p-3 bg-dark text-white">
+        <!-- Logo -->
+        <div>
+            <img src="./images/v71_74.png" alt="Pizza Lovers Logo" class="logo" style="height: 50px;">
+        </div>
+        
+        <!-- Botón de Cierre de Sesión -->
+        <div>
+            <button id="btnLogout" class="btn btn-danger">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <!-- Título de la Página -->
+    <div class="container mt-4">
+        <div class="text-center mb-3">
+            <h2>Administrador de Menú</h2>
+        </div>
+        
+        <!-- Botón Nuevo Platillo -->
+        <div class="mb-3">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarPlatillo">
+                <i class="bi bi-plus-circle"></i> Nuevo Platillo
+            </button>
+        </div>
+        
+        <!-- Tabla de Platillos -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="foodItemsTableBody">
+                    <!-- Filas generadas dinámicamente desde JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal para Agregar Nuevo Platillo -->
+    <div class="modal fade" id="modalAgregarPlatillo" tabindex="-1" aria-labelledby="modalAgregarPlatilloLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="modalAgregarPlatilloLabel">Agregar Nuevo Platillo</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addItemForm">
+                        <div class="mb-3">
+                            <label for="addNombre" class="form-label">Nombre:</label>
+                            <input type="text" id="addNombre" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addCategoria" class="form-label">Categoría:</label>
+                            <select id="addCategoria" class="form-select" required>
+                                <option value="" disabled selected>Seleccione una categoría</option>
+                                <option value="entradas">Entradas</option>
+                                <option value="pizzas">Pizzas</option>
+                                <option value="postres">Postres</option>
+                                <option value="bebidas">Bebidas</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addDescripcion" class="form-label">Descripción:</label>
+                            <textarea id="addDescripcion" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addPrecio" class="form-label">Precio ($):</label>
+                            <input type="number" step="0.01" id="addPrecio" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addStock" class="form-label">Stock:</label>
+                            <input type="number" id="addStock" class="form-control" min="0" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addImage" class="form-label">Imagen:</label>
+                            <input type="file" id="addImage" class="form-control" accept="image/*">
+                        </div>                        
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Platillo -->
+    <div class="modal fade" id="modalEditarPlatillo" tabindex="-1" aria-labelledby="modalEditarPlatilloLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-white">
+                    <h5 class="modal-title" id="modalEditarPlatilloLabel">Editar Platillo</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editItemForm">
+                        <input type="hidden" id="editItemId">
+                        <div class="mb-3">
+                            <label for="editNombre" class="form-label">Nombre:</label>
+                            <input type="text" id="editNombre" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editCategoria" class="form-label">Categoría:</label>
+                            <select id="editCategoria" class="form-select" required>
+                                <option value="" disabled>Seleccione una categoría</option>
+                                <option value="entradas">Entradas</option>
+                                <option value="pizzas">Pizzas</option>
+                                <option value="postres">Postres</option>
+                                <option value="bebidas">Bebidas</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editDescripcion" class="form-label">Descripción:</label>
+                            <textarea id="editDescripcion" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPrecio" class="form-label">Precio ($):</label>
+                            <input type="number" step="0.01" id="editPrecio" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editStock" class="form-label">Stock:</label>
+                            <input type="number" id="editStock" class="form-control" min="0" required>
+                        </div>
+                        <!-- Botones -->
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="submit" class="btn btn-warning">Actualizar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón Cerrar -->
+    <div class="text-end mt-5 mb-5 container">
+        <a href="./index.html" id="btnCerrar" class="btn btn-secondary">Cerrar</a>
+    </div>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scripts Comunes -->
+    <script src="../Common/js/api.js"></script>
+    <script src="../Common/js/auth.js"></script>
+    <script src="../Common/js/utils.js"></script>
+    <script src="../Common/js/constants.js"></script>
+    <!-- Script Específico para menuManager.html -->
+    <script src="./js/menuManager.js"></script>
+</body>
+</html>

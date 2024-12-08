@@ -1,0 +1,276 @@
+html, body {
+    height: 100%; /* Asegura que ocupen toda la altura del viewport */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(203deg, white 0%, #D9823F 100%);
+    background-attachment: fixed; /* Mantiene el gradiente fijo */
+}
+
+
+.combobox {
+    background-color: #b72a23;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+   
+}
+
+.table-container {
+    margin: 20px auto;
+    max-width: 1200px; /* Incrementado para mayor ancho */
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+}
+
+.table a.btn {
+    color: #fff;
+    background-color: #b72a23;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.table a.btn:hover {
+    background-color: #b72a23b6;
+    color: #000;
+    text-decoration: none;
+}
+.table button.btn {
+    color: #fff;
+    background-color: #b72a23;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    border: none; /* Elimina bordes del botón */
+    cursor: pointer; /* Apunta a un estilo de puntero consistente */
+}
+.table button.btn:hover {
+    background-color: #b72a23b6;
+    color: #000;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #000;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.filter-label {
+    font-weight: bold;
+    color: #000;
+}
+
+.btn-secondary {
+    background-color: #b72a23;
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-secondary:hover {
+    background-color: #a0211db7;
+    color: #000;
+}
+
+/* Responsividad para xs (<576px) */
+
+@media (max-width: 575.98px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .filter-container {
+        flex-direction: column; /* Coloca el filtro en una columna */
+        gap: 5px;
+    }
+
+    .filter-label,
+    .combobox {
+        font-size: 14px;
+        width: 40%; /* El filtro ocupa todo el ancho */
+        text-align: center;
+    }
+
+    .table-container {
+        padding: 0 5px; /* Reduce el padding lateral */
+        overflow-x: auto; /* Permite desplazamiento horizontal */
+    }
+
+    .table {
+        width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+        font-size: 12px; /* Reduce el tamaño del texto */
+        border-spacing: 0; /* Elimina los espacios entre celdas */
+    }
+
+    .table th, 
+    .table td {
+        white-space: nowrap; /* Evita el salto de línea en las celdas */
+        padding: 8px 5px; /* Ajusta el espaciado interno */
+        font-size: 12px; /* Reduce el tamaño del texto */
+        text-align: center;
+    }
+
+    .table th {
+        font-size: 13px; /* Tamaño ligeramente mayor para el encabezado */
+        text-transform: uppercase; /* Texto en mayúsculas */
+    }
+
+    .table td {
+        font-size: 12px; /* Tamaño más pequeño en las celdas */
+    }
+
+    .table button.btn, 
+    .table a.btn {
+        font-size: 10px; /* Botones más compactos */
+        padding: 5px 8px; /* Reduce el padding */
+    }
+
+    .btn-secondary {
+        font-size: 14px;
+        padding: 6px 12px; /* Botón ajustado */
+    }
+}
+
+
+/* Responsividad para sm (576px a 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .filter-container {
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .filter-label,
+    .combobox {
+        font-size: 16px;
+    }
+
+    .table-container {
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+
+    .table th {
+        font-size: 14px;
+    }
+
+    .table td {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .table button.btn,
+    .table a.btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .btn-secondary {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
+/*MODAL*/
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Encabezado del modal */
+.modal-header {
+    background-color: #F4C694;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Botón de cerrar en el modal */
+.modal-header .btn-close {
+    color: #000;
+}
+
+/* Contenido del modal */
+.modal-body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #FFF;
+}
+
+/* Estilo de cada repartidor en la lista */
+.repartidor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.repartidor:last-child {
+    border-bottom: none;
+}
+
+.repartidor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.estado {
+    width: 10px;
+    height: 10px;
+    background-color: #28A745;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Botón de asignar */
+.btn-asignar {
+    background-color: #D67D2E;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-asignar:hover {
+    background-color: #C26A20;
+}

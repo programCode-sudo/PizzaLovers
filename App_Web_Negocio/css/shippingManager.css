@@ -1,0 +1,135 @@
+body {
+    background-color: #DECCBA;
+    font-family: Arial, sans-serif;
+}
+.container {
+    margin-top: 30px;
+}
+
+
+/*LOGO
+ /* Contenedor que agrupa ambas elipses */
+ .ellipse-container {
+    position: relative;
+    width: 223px; /* Tamaño común para el contenedor */
+    height: 200px;
+  
+  }
+  
+  /* Fondo (ellipse2) */
+  .ellipse2 {
+    width: 224px; /* Más grande para simular el borde */
+    height: 170px;
+    background-color: #ffffff; /* Blanco para simular el fondo */
+    clip-path: ellipse(62% 60% at 19% 25%);
+    position: absolute;
+    top: -0.3%;
+    right: 10.8%;
+    border-radius: 10px;
+    z-index: 1; /* Envía al fondo */
+  }
+  
+  /* Capa superior (ellipse) */
+  .ellipse {
+    width: 200px;
+    height: 150px;
+    background-color: #EAB885;
+    clip-path: ellipse(67% 65% at 19% 25%);
+    position: absolute;
+    top: 0;
+    left: -10.8%;
+    border-radius: 10px;
+    z-index: 2; /* Asegura que esté por encima de ellipse2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+   
+  
+  .logo {
+    width: 50%; /* Ajusta la imagen al ancho del contenedor */
+    height: 50%; /* Mantén las proporciones de la imagen */
+    top:20px;
+    left:35px;
+    position: absolute;
+  }
+
+h1 {
+    color: dark;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.order-card {
+    border: 1px solid #EAB885;
+    background-color: #fff6ed59;
+    
+}
+
+input[type="checkbox"] {
+    accent-color: #000;
+}
+.container .d-flex.justify-content-between span {
+    flex: 1;
+    text-align: justify;
+}
+thead {
+    background-color: #EAB885;
+    color: #000;
+}
+
+/*Responsividad*/
+
+/* General adjustments for small screens */
+@media (max-width: 575.98px) {
+  .order-card header span {
+      display: block;
+      margin-bottom: 5px;
+  }
+  .order-card table th,
+  .order-card table td {
+      font-size: 12px;
+  }
+  .order-card table img {
+      width: 50px; /* Adjust image size for smaller screens */
+  }
+  .order-card footer {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
+/* For tablets and small desktops */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .order-card header span {
+      display: inline-block;
+      margin-right: 10px;
+  }
+  .order-card table th,
+  .order-card table td {
+      font-size: 14px;
+  }
+  .order-card table img {
+      width: 60px; /* Slightly larger image for tablets */
+  }
+  .order-card footer {
+      flex-wrap: wrap;
+      gap: 15px;
+  }
+}
+
+/* For medium to large desktops */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .order-card table th,
+  .order-card table td {
+      font-size: 15px;
+  }
+  .order-card table img {
+      width: 70px;
+  }
+  .order-card footer {
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+}

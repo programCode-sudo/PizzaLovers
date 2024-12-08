@@ -1,0 +1,505 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F0E9;
+}
+
+/* Header */
+.header {
+    background-color: #E0CEBC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo */
+.header .logo {
+    height: 50px;
+}
+
+/* Redes sociales */
+.header .d-flex {
+    display: flex;
+    align-items: center;
+}
+
+/* Elementos desde Ticket hacia la derecha */
+.header > div:last-child {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Ajustes de imágenes e íconos */
+.header img {
+    height: 30px;
+    margin: 0 5px;
+}
+
+/* Botón de enlace */
+.header a.btn-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    margin: 0 10px;
+}
+
+/* Badge del carrito */
+#contador-carrito {
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    right: -5px;
+    z-index: 10;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividad para xs (pantallas menores a 576px) */
+@media (max-width: 575.98px) {
+    .header {
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Logo centrado */
+    .header .logo {
+        height: 40px;
+        margin: 0 auto 10px;
+    }
+
+    /* Redes sociales centradas en su propia fila */
+    .header .d-flex {
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .header img {
+        height: 20px;
+        margin: 5px;
+    }
+
+    .header a.btn-link {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    #contador-carrito {
+        font-size: 10px;
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Responsividad para sm (pantallas entre 576px y 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        padding: 15px;
+    }
+
+    /* Logo más pequeño */
+    .header .logo {
+        height: 45px;
+    }
+
+    /* Redes sociales centradas horizontalmente */
+    .header .d-flex {
+        justify-content: center;
+    }
+
+    .header img {
+        height: 25px;
+    }
+
+    .header a.btn-link {
+        font-size: 15px;
+    }
+
+    #contador-carrito {
+        font-size: 11px;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Promo Section */
+.promo-section {
+    margin: 0;
+    padding: 0;
+}
+
+.promo-left-container {
+    background: linear-gradient(239deg, #E0CEBC 42%, #EAB885 76%);
+    color: black;
+    padding: 20px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.promo-price {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 8%;
+}
+
+.promo-description {
+    font-size: 1.5rem;
+    margin-bottom: 9%;
+}
+
+.promo-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Columna derecha con imagen de fondo */
+.promo-right-container {
+    background: #E0CEBC;
+}
+
+.fondo_cortado {
+    background: url('/images/Promocion_Dia.png') no-repeat center center;
+    background-size: cover;
+    min-height: 400px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 31% 100%);
+}
+
+/* Responsividad para sm (576px a 768px) */
+@media (max-width: 768px) {
+    .promo-section .row {
+        flex-direction: column;
+    }
+
+    .promo-left-container,
+    .promo-right-container {
+        min-height: auto;
+        width: 100%;
+    }
+
+    .promo-left-container {
+        padding: 15px;
+    }
+
+    .promo-price {
+        font-size: 2.5rem;
+    }
+
+    .promo-description {
+        font-size: 1.2rem;
+    }
+
+    .promo-title {
+        font-size: 2rem;
+    }
+
+    .fondo_cortado {
+        clip-path: none;
+        background-position: center;
+        min-height: 300px;
+    }
+}
+
+/* Responsividad para xs (<576px) */
+@media (max-width: 575.98px) {
+    .promo-section .row {
+        flex-direction: column;
+    }
+
+    .promo-left-container,
+    .promo-right-container {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .promo-left-container {
+        padding: 10px;
+    }
+
+    .promo-price {
+        font-size: 2rem;
+    }
+
+    .promo-description {
+        font-size: 1rem;
+    }
+
+    .promo-title {
+        font-size: 1.8rem;
+    }
+
+    .fondo_cortado {
+        clip-path: none;
+        background-position: center;
+        min-height: 250px;
+    }
+}
+
+
+
+/* Categorías */
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.category-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Añadido para hover */
+}
+
+.category-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Hover Effects */
+.category-link:hover .category-image {
+    transform: scale(1.1);
+}
+
+.category-link:hover .category-title {
+    color: #ff6600;
+}
+
+/* Responsive adjustments */
+
+/* Para pantallas pequeñas (sm: 576px a 768px) */
+@media (max-width: 768px) {
+    .category-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .category-title {
+        font-size: 0.9rem;
+    }
+}
+
+/* Para pantallas extra pequeñas (xs: menor a 576px) */
+@media (max-width: 575.98px) {
+    .category-item {
+        margin-top: 20px; /* Más espacio entre filas */
+    }
+
+    .category-image {
+        width: 80px; /* Imágenes más pequeñas */
+        height: 80px;
+    }
+
+    .category-title {
+        font-size: 0.8rem; /* Texto más pequeño */
+    }
+
+    /* Deshabilitar hover en pantallas táctiles */
+    .category-link:hover .category-image {
+        transform: none;
+    }
+
+    .category-link:hover .category-title {
+        color: inherit;
+    }
+}
+
+
+
+/* Footer Section */
+.footer {
+    background-color: black;
+    color: white;
+}
+
+.footer-title {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.footer-link {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-app-link {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 50px;
+    height: auto;
+}
+
+.footer-line {
+    height: 2px;
+    background-color: white;
+    margin: 20px 0;
+}
+
+/* Responsividad para xs (pantallas menores a 576px) */
+/* Responsividad para xs (pantallas menores a 576px) */
+@media (max-width: 575.98px) {
+    .footer .container {
+        padding: 15px;
+    }
+
+    /* Texto del call center */
+    .footer section.py-3.text-center {
+        margin-bottom: 15px;
+    }
+
+    .footer-text {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Navegación apilada */
+    .footer nav .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .footer-link {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    /* Logotipo de la app centrado */
+    .footer-app-link {
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 40px;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+    }
+
+    /* Copyright centrado */
+    .footer-copyright {
+        font-size: 13px;
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px;
+        line-height: 1.5;
+    }
+
+    /* Línea divisoria */
+    .footer-line {
+        margin: 15px 0;
+    }
+
+    /* Centrar logotipo y texto como bloque */
+    .footer .py-3.d-flex {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer .py-3.d-flex > div {
+        width: 100%;
+    }
+}
+
+
+
+/* Responsividad para sm (pantallas entre 576px y 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .footer .container {
+        padding: 20px;
+    }
+
+    /* Texto del call center */
+    .footer-text {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    /* Navegación con columnas */
+    .footer nav .row {
+        flex-wrap: wrap;
+    }
+
+    .footer-title {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .footer-link {
+        font-size: 14px;
+    }
+
+    /* App y copyright */
+    .footer-app-link {
+        font-size: 15px;
+    }
+
+    .footer-logo {
+        width: 45px;
+        margin-bottom: 10px;
+    }
+
+    .footer-copyright {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
