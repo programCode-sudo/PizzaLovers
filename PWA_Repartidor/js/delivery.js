@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const cambiarEstadoBtn = document.getElementById('cambiarEstadoBtn');
     const statusSelect = document.getElementById('statusSelect');
 
-    let assignedOrders = []; // Pedidos asignados al repartidor
-    let selectedOrderId = null; // Pedido seleccionado para cambiar estado
+    let assignedOrders = [];
+    let selectedOrderId = null;
 
-    // Verificar autenticación al cargar
+    // Verificar autenticación
     if (!isAuthenticated()) {
         window.location.href = './index.html';
         return;
@@ -27,10 +27,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         logoutBtn.style.display = 'inline-block';
     }
 
-    // Cargar pedidos disponibles al iniciar
+    // Por defecto, cargar pedidos disponibles al inicio
     await cargarPedidosDisponibles();
 
-    // Evento de inicio de sesión
     iniciarSesionForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const username = document.getElementById('loginUsername').value.trim();
@@ -38,25 +37,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             await login(username, password);
             if (isAuthenticated()) {
-                // Éxito al iniciar sesión
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'inline-block';
 
-                // Cerrar modal de inicio de sesión
                 const loginModal = new bootstrap.Modal(document.getElementById('modalIniciarSesion'));
                 loginModal.hide();
-
-                // Refrescar la página para cargar los pedidos
                 window.location.reload();
             } else {
-                Swal.fire('Error', 'Error en el inicio de sesión. Por favor, intenta nuevamente.', 'error');
+                Swal.fire('Error', 'Error en el inicio de sesión.', 'error');
             }
         } catch (error) {
             Swal.fire('Error', `Error: ${error.message}`, 'error');
         }
     });
 
-    // Cerrar sesión
     logoutBtn.addEventListener('click', () => {
         logout();
         loginBtn.style.display = 'inline-block';
@@ -66,51 +60,45 @@ document.addEventListener('DOMContentLoaded', async () => {
         ordersTableBody.innerHTML = '';
     });
 
-    // Cambio online/offline
     statusSwitch.addEventListener('change', async () => {
         const isOnline = statusSwitch.checked ? 1 : 0;
         try {
             await apiRequest('/delivery_person/changeIsOnline/', 'POST', { is_online: isOnline }, true);
-            console.log('Estado is_online actualizado:', isOnline);
-            Swal.fire('Éxito', 'Estado actualizado correctamente.', 'success');
+            Swal.fire('Éxito', `Ahora estás ${isOnline === 1 ? 'online' : 'offline'}.`, 'success');
         } catch (error) {
             console.error('Error al cambiar estado online:', error);
-            Swal.fire('Error', 'Error al cambiar estado. Intenta nuevamente.', 'error');
+            Swal.fire('Error', 'No se pudo cambiar el estado online.', 'error');
             // Revertir el switch
-            statusSwitch.checked = !isOnline;
+            statusSwitch.checked = !statusSwitch.checked;
         }
     });
 
-    // Pedidos disponibles: obtener todos los pedidos
     pedidosDisponiblesBtn.addEventListener('click', async () => {
         await cargarPedidosDisponibles();
     });
 
-    // Pedido asignado: obtener pedidos asignados al repartidor
     pedidoAsignadoBtn.addEventListener('click', async () => {
         await cargarPedidosAsignados();
     });
 
-    // Cambiar estado del pedido seleccionado
     cambiarEstadoBtn.addEventListener('click', async () => {
         if (!selectedOrderId) {
             Swal.fire('Atención', 'No se ha seleccionado ningún pedido.', 'warning');
             return;
         }
-        const nuevoEstado = statusSelect.value; // Entregado o Cancelado
+        const nuevoEstado = statusSelect.value;
         if (!nuevoEstado) {
-            Swal.fire('Atención', 'Por favor, seleccione un nuevo estado.', 'warning');
+            Swal.fire('Atención', 'Seleccione un nuevo estado.', 'warning');
             return;
         }
         try {
             await apiRequest(`/delivery_person/changeOrderStatus/${selectedOrderId}/`, 'POST', { status: nuevoEstado }, true);
             Swal.fire('Éxito', `Estado del pedido ${selectedOrderId} actualizado a ${nuevoEstado}.`, 'success');
-            await cargarPedidosAsignados(); // refrescar la lista
+            await cargarPedidosAsignados();
             selectedOrderId = null;
-            // Resetear el combo box
             statusSelect.value = "";
         } catch (error) {
-            console.error('Error al cambiar estado del pedido:', error);
+            console.error('Error al cambiar estado:', error);
             Swal.fire('Error', 'No se pudo cambiar el estado del pedido.', 'error');
         }
     });
@@ -128,22 +116,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function cargarPedidosAsignados() {
         try {
+            // Este endpoint debe devolver un array con los pedidos asignados
             const response = await apiRequest('/delivery_person/viewOrders/', 'GET', null, true);
-            assignedOrders = response.results; // Suponiendo que este endpoint retorna {results: [...]}
+            // Según lo mostrado, response es un array directo
+            console.log("Pedidos asignados:", response);
+            assignedOrders = response;
 
-            // Mostrar pedidos en el modal
             mostrarPedidosAsignados();
-            // Abrir el modal
             const asignadoModal = new bootstrap.Modal(document.getElementById('pedidoAsignadoModal'));
             asignadoModal.show();
         } catch (error) {
             console.error('Error al cargar pedidos asignados:', error);
-            if (error.response && error.response.status === 401) {
-                Swal.fire('No Autorizado', 'Debe iniciar sesión para ver sus pedidos asignados.', 'error');
-                window.location.href = './index.html';
-            } else {
-                Swal.fire('Error', 'No se pudieron cargar los pedidos asignados.', 'error');
-            }
+            Swal.fire('Error', 'No se pudieron cargar los pedidos asignados.', 'error');
         }
     }
 
@@ -189,7 +173,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             assignedOrdersContainer.appendChild(div);
         });
 
-        // Asignar eventos a los botones de seleccionar
         const seleccionarBtns = assignedOrdersContainer.querySelectorAll('.seleccionar-pedido');
         seleccionarBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -198,5 +181,4 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
     }
-
 });
