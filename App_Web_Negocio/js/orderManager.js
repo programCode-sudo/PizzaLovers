@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.querySelector(".table-container tbody");
   const categoryFilter = document.getElementById("categoryFilter");
-  const apiURL = "http://web-production-3c69.up.railway.app/menu_manager/getFoodItems/";
+  const apiURL = "https://web-production-3c69.up.railway.app/menu_manager/getFoodItems/";
   const addOrderButton = document.querySelector(".btn-red");
   const orderContainer = document.querySelector("article");
   const finalizarCompraButton = document.getElementById("finalizar-compra");
