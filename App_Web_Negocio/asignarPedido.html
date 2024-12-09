@@ -180,7 +180,7 @@
               const orderId = button.getAttribute("data-order-id");
               try {
                 const response = await fetch(
-                  `http://web-production-3c69.up.railway.app/order_manager/cancelOrder/${orderId}/`,
+                  `https://web-production-3c69.up.railway.app/order_manager/cancelOrder/${orderId}/`,
                   {
                     method: "POST",
                   }
