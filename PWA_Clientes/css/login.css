@@ -105,3 +105,73 @@ body {
 .btn_registro:hover{
   background: #dda479;
 }
+
+
+/* Responsividad para xs (<576px) */
+@media (max-width: 575.98px) {
+  .ellipse, .ellipse2 {
+    display: none; /* Oculta ambas elipses en pantallas pequeñas */
+}
+
+.ellipse-container {
+  display: none;
+}
+
+.logo {
+    display: none;
+}
+
+  .ancho-form {
+      width: 90%; /* Ocupa casi todo el ancho del viewport */
+      padding: 20px; /* Reduce el padding */
+  }
+
+  .textbox-size {
+      max-width: 100%; /* Ocupa todo el ancho disponible */
+      font-size: 12px; /* Texto más pequeño */
+      margin-top: 5%; /* Reduce el margen superior */
+  }
+
+  .btn_iniciar_sesion, .btn_registro {
+      width: 100%; /* Ocupan todo el ancho */
+      padding: 10px; /* Ajusta el padding */
+      font-size: 14px; /* Texto más compacto */
+  }
+
+  h2 {
+      font-size: 18px; /* Título más pequeño */
+      margin-bottom: 10px;
+  }
+}
+
+/* Responsividad para sm (576px a 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .ellipse, .ellipse2 {
+    display: none; /* Oculta ambas elipses en pantallas pequeñas */
+}
+
+.ellipse-container {
+  display: none;
+}
+
+.logo {
+    display: none;
+}
+
+  .ancho-form {
+      width: 70%; /* Más ancho que en xs */
+      padding: 25px;
+  }
+
+  .textbox-size {
+      max-width: 80%; /* Reduce el ancho máximo */
+      font-size: 14px;
+      margin-top: 6%; /* Margen superior intermedio */
+  }
+
+  .btn_iniciar_sesion, .btn_registro {
+      width: 90%; /* Ajusta el ancho del botón */
+      padding: 12px;
+      font-size: 15px;
+  }
+}
